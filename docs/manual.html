@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual</title>
+</head>
+<body>
+<h1>PySigVi Manual</h1>
+
+<h2>You are in hurry? Read This!</h2>
+<ul>
+    <li>Click on the button with the three dots.</li>
+    <li>Select the file you want to verify the signatures.</li>
+    <li>Click "Add Signatures".</li>
+    <li>Select the signatures.</li>
+    <li>Click on "Check Signatures" to verify the signature of the file.</li>
+    <li>Look at the "Check" field.</li>
+    <li>If everything is green the file is correctly signed!</li>
+</ul>
+
+<h2 id="Index">Index</h2>
+<ul>
+    <li><a href="#Introduction">Introduction</a></li>
+    <li><a href="#Prerequisites">Prerequisites</a></li>
+    <li><a href="#Installation">Installation</a></li>
+    <li><a href="#Instructions">Instructions</a></li>
+</ul>
+
+<h2 id="Introduction">Introduction</h2>
+<p>Introduction</p>
+<p>PySigVi is a GUI (Graphical User Interface) for <a href="https://gnupg.org/">GNU Privacy Guard (GPG)</a>.</p>
+<p>It checks the detached signatures of a file.</p>
+<p>Under the hood it repeat:</p>
+<code>gpg --verify detached_signature file_to_verify</code>
+<p>for each detached signature.</p>
+<p>PySigVi does not create the signatures! It only checks the existing ones created with some other software.</p>
+<p>To work properly, all the <a href="#Prerequisites">Prerequisites</a> must be met.</p>
+<p><a href="#Index">Index</a></p>
+
+<h2 id="Prerequisites">Prerequisites</h2>
+<p><a href="https://gnupg.org/">GNU Privacy Guard</a> installed and in the path of your system.</p>
+<p>If you want to execute as a Python3 script, you also need:</p>
+<ul>
+    <li><a href="https://www.python.org/">Python3</a> installed.</li>
+    <li><a href="https://pypi.org/project/PySide6/">Pyside6</a> for the GUI (Graphical User Interface).
+        It should be installed in your system or virtual environment.</li>
+</ul>
+<p><a href="#Index">Index</a></p>
+
+<h2 id="Installation">Installation and Execution</h2>
+<h3>For python users</h3>
+<p>If you want to execute PySigVi as a python3 script, download in a directory these files and folders:</p>
+<ul>
+    <li>pysigvi.py</li>
+    <li>docs</li>
+    <ul>
+        <li>about.html</li>
+        <li>license.html</li>
+        <li>manual.html</li>
+    </ul>
+    <li>icons</li>
+    <ul>
+        <li>blue-folder-open-document.png</li>
+        <li>blue-folder-open-document-text.png</li>
+        <li>door-open-out.png</li>
+        <li>pysigvi.ico</li>
+        <li>ui-check-box.png</li>
+    </ul>
+</ul>
+<p>Then execute the script:</p>
+<code>$ python3 pisigvi.py</code>
+<p><a href="#Index">Index</a></p>
+<h3>For Windows User</h3>
+<p>If not already installed, download and install <a href="https://gnupg.org/">GPG</a>.</p>
+<p>Download the latest executable pysigvi.exe</p>
+<p>from this url: <a href="https://github.com/pysimone/PySigVi/releases/latest">
+    https://github.com/pysimone/PySigVi/releases/latest</a> .</p>
+<p>Double click on pysigvi.exe to run the script.</p>
+<p><a href="#Index">Index</a></p>
+<h3>For Linux User</h3>
+<p>If not already installed, install <a href="https://gnupg.org/">GPG</a>:</p>
+<code>sudo apt-get install gnupg</code>
+<p>Download the latest binary pysigvi</p>
+<p>from this url: <a href="https://github.com/pysimone/PySigVi/releases/latest">
+    https://github.com/pysimone/PySigVi/releases/latest</a> .</p>
+<p>Make the file executable:</p>
+<code>chmod a+x pysigvi</code>
+<p>Execute the binary:</p>
+<code>./pysigvi</code>
+<p>Or install the binary in the system:</p>
+<code>sudo install ./pysigvi /usr/bin/</code>
+<p>Execute the binary:</p>
+<code>pysigvi</code>
+
+<h2 id="Instructions">Instructions</h2>
+<p>You need to open the file to be verified and the signatures to verify.</p>
+<b>Open the file to verify:</b>
+<p>Click on the button with the three dots "...".</p>
+<p>Or from the menu: File->Open File.</p>
+<p>Or on the tools bar click the first icon.</p>
+<p>Or use the shortcut: Ctrl+F.</p>
+<p>Now you can select the file.</p>
+<p>In the dialog select a file. The name will appear in the "Name" field.</p>
+<p>Click the "Open" button to confirm the selection.
+    Or click the "Cancel" button to go back to the main window with no selection.</p>
+<p>The selected file, with its complete url, now appears in the "File to Verify" field.</p>
+<b>Select the signatures:</b>
+<p>Click on the button "Add Signatures".</p>
+<p>Or from the menu: Tools->Add Signatures.</p>
+<p>Or from the tools bar click the second icon.</p>
+<p>Or use the shortcut: Ctrl+S.</p>
+<p>Now you can select one signature with a click or
+    multiple signatures holding Ctrl and clicking on the files.</p>
+<p>Click the "Open" button to confirm the selection.
+    Or click the "Cancel" button to go back to the main window with no selection.</p>
+<p>The selected file or files, with their complete url, now are listed in the "Signatures" field.</p>
+<p>You can add more signatures repeating the previous steps.</p>
+<b>Remove the signatures:</b>
+<p>If you want to clear the "Signatures" field:</p>
+<p>Click on "Remove Signatures".</p>
+<p>Or from the menu select: Tools->Clear Signatures.</p>
+<p>If the "File to verify" and the "Signatures field" are not empty, you can check the signatures of the file.</p>
+<b>Check the signatures:</b>
+<p>Click on the button "Check Signatures".</p>
+<p>Or from the menu: Tools->Check Signatures.</p>
+<p>PySigVi performs the check of the file with the signatures.</p>
+<p>In the field "Check" is reported the result of the check.</p>
+<p>If a signature is verified its row is green.</p>
+<p>If a signature is NOT verified its row is red.</p>
+<p>If one ore more signatures are not verified an alert dialog appears.</p>
+<p>Acknowledge the alert by clicking on the "Ok" button.</p>
+<p>In the rows are written some notes about the result of the check.</p>
+<p>After reading the notes you can decide to undertake more actions about the signatures.</p>
+<p>You can repeat the check repeating the steps above.</p>
+<b>Clear the results:</b>
+<p>Click on the "Clear Check" button.</p>
+<p>Or from the menu select: Tools->Clear Check.</p>
+<b>Manual and Informations:</b>
+<p>You can see this manual with Help->Manual or press "F1".</p>
+<p>To read the license: Help->License.</p>
+<p>About PySigVi: Help->About.</p>
+<p><a href="#Index">Index</a></p>
+<h2>Contributing:</h2>
+<p>You can contribute to the project using GitHub:</p>
+<p>you can open an issue or fork the project and send a pull request.</p>
+<p>If you like the <a href="https://github.com/pysimone/PySigVi">project</a>, please click on star!</p>
+<p>This software is all for free, each support is wellcome :)</p>
+<p>Thanks!</p>
+</body>
+</html>
