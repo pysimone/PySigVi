@@ -63,7 +63,7 @@ class ManualDialog(QDialog):
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle('Signatures Verify')  # Main Window
+        self.setWindowTitle('PySigVi - Signatures Verify')  # Main Window
         self.setMinimumSize(QSize(640, 480))
         # Labels
         file_label = QLabel('File to verify: ')  # File to verify
